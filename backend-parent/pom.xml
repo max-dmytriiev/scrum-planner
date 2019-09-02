@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>starter</module>
+        <module>api</module>
     </modules>
 
     <properties>
@@ -25,6 +26,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
+                <version>${ver.spring}</version>
             </dependency>
 
             <!-- Data access libraries -->
@@ -41,4 +43,11 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -17,11 +17,13 @@
         <ver.planner>0.1</ver.planner>
 
         <ver.java>1.8</ver.java>
+        <ver.java.api>8.0.1</ver.java.api>
         <ver.maven.compiler>3.8.1</ver.maven.compiler>
         <ver.maven.checkstyle>3.0.0</ver.maven.checkstyle>
 
         <ver.spring>2.1.7.RELEASE</ver.spring>
         <ver.guava>28.0-jre</ver.guava>
+        <ver.lombok>1.18.8</ver.lombok>
 
         <checkstyle.path>${maven.multiModuleProjectDirectory}/tools/checkstyle</checkstyle.path>
 
@@ -30,6 +32,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${ver.java.api}</version>
+            </dependency>
+
             <!-- Spring Boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -43,6 +51,11 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${ver.guava}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${ver.lombok}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

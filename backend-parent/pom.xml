@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>planner</artifactId>
+        <groupId>ua.in.soul.tools.scrum</groupId>
+        <version>${ver.planner}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>backend-parent</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>starter</module>
+    </modules>
+
+    <properties>
+        <ver.mariadb>2.4.3</ver.mariadb>
+        <ver.liquibase>3.8.0</ver.liquibase>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
+
+            <!-- Data access libraries -->
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>${ver.mariadb}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${ver.liquibase}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

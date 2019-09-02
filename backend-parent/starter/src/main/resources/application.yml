@@ -1,1 +1,9 @@
 spring:
+    datasource:
+        url: 'jdbc:mariadb://@env.SCPL_HOST@:@env.SCPL_PORT@/@env.SCPL_SCHEMA@?createDatabaseIfNotExist=true'
+        username: '@env.SCPL_USER@'
+        password: '@env.SCPL_PASS@'
+        driver-class-name: 'org.mariadb.jdbc.Driver'
+
+    liquibase:
+        change-log: classpath:liquibase/changelog-master.yml

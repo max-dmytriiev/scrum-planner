@@ -1,4 +1,4 @@
-#Scrum Planner
+# Scrum Planner
 
 A small tool for conducting Scrum estimation sessions
 

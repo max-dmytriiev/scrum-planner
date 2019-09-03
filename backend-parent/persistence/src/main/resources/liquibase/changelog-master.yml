@@ -1,0 +1,74 @@
+databaseChangeLog:
+    -   preConditions:
+            -   runningAs:
+                    username: '@env.SCPL_USER@'
+
+    -   changeSet:
+            id:      20190902_2031
+            author:  Maksym Dmytriiev
+            comment: Create table for storing Scrum data
+            changes:
+                -   createTable:
+                        tableName: scrum
+                        columns:
+                            -   column:
+                                    name: id
+                                    type: binary(16)
+                                    constraints:
+                                        primaryKey: true
+                                        nullable:   false
+                            -   column:
+                                    name: name
+                                    type: varchar(255)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: pin
+                                    type: varchar(4)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: created_at
+                                    type: datetime
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: updated_at
+                                    type: datetime
+                                    constraints:
+                                        nullable: false
+    -   changeSet:
+            id:     20190902_2032
+            author: Maksym Dmytriiev
+            changes:
+                -   createTable:
+                        tableName: role
+                        columns:
+                            -   column:
+                                    name: id
+                                    type: binary(16)
+                                    constraints:
+                                        primaryKey: true
+                                        nullable:   false
+                            -   column:
+                                    name: scrum_id
+                                    type: binary(16)
+                                    constraints:
+                                        nullable:       false
+                                        foreignKeyName: fk_role_scrum
+                                        references:     scrum(id)
+                            -   column:
+                                    name: name
+                                    type: varchar(255)
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: created_at
+                                    type: datetime
+                                    constraints:
+                                        nullable: false
+                            -   column:
+                                    name: updated_at
+                                    type: datetime
+                                    constraints:
+                                        nullable: false

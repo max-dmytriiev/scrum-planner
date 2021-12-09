@@ -23,7 +23,7 @@
         <ver.maven.dependency>3.1.1</ver.maven.dependency>
 
         <ver.spring>2.1.7.RELEASE</ver.spring>
-        <ver.jackson>2.9.9</ver.jackson>
+        <ver.jackson>2.9.10.8</ver.jackson>
         <ver.guava>28.0-jre</ver.guava>
         <ver.lombok>1.18.8</ver.lombok>
 

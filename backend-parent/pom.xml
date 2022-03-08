@@ -21,7 +21,7 @@
 
     <properties>
         <ver.mariadb>2.4.3</ver.mariadb>
-        <ver.liquibase>3.8.0</ver.liquibase>
+        <ver.liquibase>4.8.0</ver.liquibase>
     </properties>
 
     <dependencyManagement>
